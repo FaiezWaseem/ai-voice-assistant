@@ -31,6 +31,8 @@ A Python-based voice assistant that facilitates voice-to-voice interaction. It r
    ```env
    ELEVEN_API_KEY=your_elevenlabs_api_key
    OPENAI_API_KEY=your_openai_api_key  # Optional for Pollinations, but recommended
+   OPENAI_API_URL=https://gen.pollinations.ai/v1/chat/completions
+   OUT_VOICE=alloy
    ```
 
    > **Note**: This project uses [Pollinations.ai](https://pollinations.ai) which provides free access to OpenAI-compatible models, but you may need an API key for higher limits or stability.

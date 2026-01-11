@@ -9,17 +9,17 @@ load_dotenv()
 
 
 # Configuration
-API_URL = "https://gen.pollinations.ai/v1/chat/completions"
+API_URL = os.getenv("OPENAI_API_URL") or "https://gen.pollinations.ai/v1/chat/completions"
 # Replace with your secret key from enter.pollinations.ai if you have one
 # Basic requests may work without a key but are subject to lower limits.
 HEADERS = {"Content-Type": "application/json", "Authorization": f"Bearer {os.getenv('OPENAI_API_KEY')}"}
 
-def text_to_audio(text, file_path='audio/output.wav'):
+def text_to_audio(text, file_path='audio/output.wav' , voice="alloy"):
 
     payload = {
         "model": "openai-audio",
         "modalities": ["text", "audio"],
-        "audio": { "voice": "alloy", "format": "wav" },
+        "audio": { "voice": voice, "format": "wav" },
         "messages": [
             {
                 "role": "system",

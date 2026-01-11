@@ -21,7 +21,7 @@ if __name__ == "__main__":
     
     if transcript:
         # 3. Think (Generate Answer)
-        answer = text_to_audio(transcript, output_file)
+        answer = text_to_audio(transcript, output_file, voice=os.getenv("OUT_VOICE"))
         print(answer)
         
         if answer:
